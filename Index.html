@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en"> 
+ <head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Virtual Math Teacher</title> 
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #2c003e, #000000);
+      margin: 0;
+      padding: 20px;
+      color: #ffffff;
+    }
+    h2 {
+      color: #ff00ff; /* Neon pink */
+      text-align: center;
+      text-shadow: 0 0 10px rgba(255, 0, 255, 0.8);
+    }
+    #container {
+      max-width: 600px;
+      margin: auto;
+      background: rgba(20, 20, 20, 0.9);
+      border-radius: 15px;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      text-align: center;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    input[type="file"] {
+      display: block;
+      margin: 10px auto;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      padding: 10px;
+      transition: border-color 0.3s;
+      background: #333;
+      color: #fff;
+    }
+    input[type="file"]:hover {
+      border-color: #ff00ff; /* Neon pink */
+    }
+    button {
+      background-color: #ff00ff; /* Neon pink */
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #ff66ff; /* Lighter neon pink */
+      transform: scale(1.05);
+    }
+    #output {
+      margin-top: 20px;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: rgba(50, 50, 50, 0.8);
+      animation: fadeIn 0.5s;
+      border: 2px solid #ff00ff; /* Neon border */
+      box-shadow: 0 0 10px #ff00ff; /* Neon glow effect */
+      transition: transform 0.3s;
+    }
+    #output:hover {
+      transform: scale(1.02);
+    }
+    #output h3 {
+      color: #00ffcc; /* Neon cyan */
+      text-shadow: 0 0 5px rgba(0, 255, 204, 0.8);
+    }
+    pre {
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      background-color: #222;
+      border: 1px solid #777;
+      border-radius: 4px;
+      padding: 10px;
+      max-height: 200px;
+      overflow-y: auto;
+      color: #00ffcc; /* Neon cyan */
+    }
+    .animated-teacher {
+      width: 100%;
+      max-width: 200px;
+      margin: 10px auto;
+      display: block;
+      animation: shake 0.5s ease-in-out infinite;
+    }
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      50% { transform: translateX(5px); }
+      75% { transform: translateX(-5px); }
+    }
+    .cat-gif {
+      width: 100%;
+      max-width: 300px;
+      margin-top: 20px;
+      display: block;
+      animation: bounce 1s infinite;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    .svg-icon {
+      width: 80px;
+      height: 80px;
+      margin: 10px auto;
+      animation: rotate 5s linear infinite;
+    }
+    @keyframes rotate {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style> 
+ </head> 
+ <body> 
+  <div id="container"> 
+   <h2>Virtual Math Teacher</h2> 
+   <img src="https://media.giphy.com/media/l2Sqy1HF7X7e6D1g0/giphy.gif" alt="Animated Teacher" class="animated-teacher"> <!-- SVG Icon --> 
+   <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 24 24" fill="none" stroke="#ff00ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"> <circle cx="12" cy="12" r="10" /> <line x1="12" y1="6" x2="12" y2="12" /> <line x1="12" y1="18" x2="12" y2="18" /> <line x1="6" y1="12" x2="12" y2="12" /> <line x1="18" y1="12" x2="12" y2="12" /> 
+   </svg> 
+   <p>Maths question image upload karo aur answer lo:</p> 
+   <input type="file" id="imageInput" accept="image/*"> <button id="submitBtn">Get Answer</button> 
+   <div id="output"> 
+    <h3>Answer:</h3> 
+    <pre id="answerText">Yahan answer dikhega...</pre> 
+   </div> 
+   <img src="https://media.tenor.com/images/6e7f88e15f636d0222366ef00f3efcc2/tenor.gif" alt="Cat GIF" class="cat-gif"> 
+  </div> 
+  <script>
+    document.getElementById('submitBtn').addEventListener('click', processImage);
+
+    async function processImage() {
+      const imageInput = document.getElementById('imageInput').files[0];
+      if (!imageInput) {
+        alert("Pehle ek image upload karo!");
+        return;
+      }
+
+      const base64data = await convertToBase64(imageInput);
+      const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=AIzaSyCWFRHQ3B9A-wERY9QbggKWHffLeHkAuzg`;
+      
+      const payload = {
+        contents: [{
+          parts: [
+            { text: "Solve this math problem from the image." },
+            {
+              inline_data: {
+                mime_type: "image/jpeg",
+                data: base64data
+              }
+            }
+          ]
+        }]
+      };
+
+      try {
+        const response = await fetch(apiUrl, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(payload)
+        });
+
+        const data = await response.json();
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+
+        // Extracting the answer from the API response
+        if (data && data.candidates && data.candidates[0] && data.candidates[0].content.parts[0]) {
+          const answerText = data.candidates[0].content.parts[0].text;
+          document.getElementById("answerText").innerText = answerText;
+        } else {
+          document.getElementById("answerText").innerText = "Answer fetch karne mein issue hai.";
+        }
+      } catch (error) {
+        console.error("API Error:", error);
+        document.getElementById("answerText").innerText = "API call failed: " + error.message;
+      }
+    }
+
+    function convertToBase64(file) {
+      return new Promise((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onloadend = () => resolve(reader.result.split(',')[1]); // Return base64 data
+        reader.onerror = (error) => reject(error);
+        reader.readAsDataURL(file); // Start reading the image file
+      });
+    }
+  </script> 
+ </body>
+  </html>
