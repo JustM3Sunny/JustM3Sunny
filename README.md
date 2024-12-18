@@ -53,7 +53,7 @@ Welcome to my GitHub crib! 🏠 Where the code is fresh, the bugs are squashed, 
 
 ### 🔥 Fun Fact:
 
-"I code like a beast, hack like a pro, and celebrate with some epic butter chicken! 🍗😎 Plus, I can debug while dancing bhangra and maybe even juggle some code!" 💃💻
+"I code like a beast,and celebrate with some epic butter chicken! 🍗😎 Plus, I can debug while dancing and maybe even juggle some code!" 💃💻
 
 ![Coding GIF](https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif)
 
