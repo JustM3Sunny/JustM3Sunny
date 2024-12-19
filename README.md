@@ -1,4 +1,4 @@
-# Yo brahh! 😎 What’s up?! 👋 I'm Sunny 👨‍💻
+# Yo brohh! 😎 What’s up?! 👋 I'm Sunny 👨‍💻
 
 ### 💻 Coder | Full Stack Developer | Cybersecurity Buff | Punjabi Boy 💥
 
@@ -13,7 +13,7 @@ Welcome to my GitHub crib! 🏠 Where the code is fresh, the bugs are squashed, 
 - 🔥 **Full Stack Developer** with a knack for whipping up killer web apps and solving complex problems.
 - 🕵️‍♂️ Deep into **cybersecurity**—I’m all about keeping the digital world safe from bugs and hackers! 🔒🐛
 - 🚀 Tech enthusiast always on the hunt for the latest stacks, tools, and hacking challenges. Coding marathons and tech jams are my thing! 🎮🔧
-- 💬 Proud **Punjabi Boy** who codes hard, dances harder 💃, and never misses a chance to enjoy butter chicken 🍗!
+- 💬 **Punjabi Boy** who codes hard !
 
 ---
 
@@ -53,17 +53,22 @@ Welcome to my GitHub crib! 🏠 Where the code is fresh, the bugs are squashed, 
 
 ### 🔥 Fun Fact:
 
-"I code like a beast,and celebrate with some epic butter chicken! 🍗😎 Plus, I can debug while dancing and maybe even juggle some code!" 💃💻
+"I code like a beast, hack like a pro, and celebrate with some epic butter chicken! 🍗😎 Plus, I can debug while dancing bhangra and maybe even juggle some code!" 💃💻
 
 ![Coding GIF](https://media.giphy.com/media/du3J3cXyzhj75IOgvA/giphy.gif)
 
 ---
 
-### 📞 Connect Me (Adding Soon...):
-- 💬 Instagram, Twitter, LinkedIn? Stay tuned! More connections and cool stuff coming your way! 🚀
+## 📞 Connect Me (Adding Soon...):
+💬 Instagram, Twitter, LinkedIn? Stay tuned! More connections and cool stuff coming your way! 🚀
 
-![Waving GIF](https://media.giphy.com/media/3o7aD8tX7A8M2JzprS/giphy.gif)
-
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077b5?style=flat&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sandeep-singh-30526a32a)
+[![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=flat&logo=twitter&logoColor=white)](https://x.com/JustM3Sunny)
+[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=flat&logo=instagram&logoColor=white)](https://www.instagram.com/__justaskcoding__76_/)
+[![CodePen](https://img.shields.io/badge/CodePen-000000?style=flat&logo=codepen&logoColor=white)](https://codepen.io/JustM3Sunny)
+[![Stack Overflow](https://img.shields.io/badge/Stack_Overflow-FE7A16?style=flat&logo=stackoverflow&logoColor=white)](https://stackoverflow.com/users/28777001/sunny)
+[![Freelancer](https://img.shields.io/badge/Freelancer-0078D4?style=flat&logo=freelancer&logoColor=white)](https://www.freelancer.in/u/JustM3Sunny?sb=t)
+[![Telegram](https://img.shields.io/badge/Telegram-0088cc?style=flat&logo=telegram&logoColor=white)](https://t.me/CodingCoursesAndProjects)
 ---
 
 Thanks for stopping by! **Stay awesome, keep coding, and let's conquer the tech world together!** 💻🎉
